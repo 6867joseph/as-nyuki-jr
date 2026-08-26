@@ -1,8 +1,392 @@
-/* Style officiel du site AS Nyuki JR */
+/* =========================================
+   AS NYUKI JR — STYLE PRINCIPAL
+   ========================================= */
+
+:root {
+    --green: #39ff14;
+    --dark-green: #168000;
+    --black: #050505;
+    --dark: #101010;
+    --yellow: #ffd600;
+    --white: #ffffff;
+    --gray: #bdbdbd;
+}
+
+
+/* =========================================
+   RÉGLAGES GÉNÉRAUX
+   ========================================= */
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
-    background-color: #000000;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================================
+   BARRE DE NAVIGATION
+   ========================================= */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 5%;
+
+    background: rgba(5, 5, 5, 0.96);
+    border-bottom: 2px solid var(--green);
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--green);
+}
+
+.logo-link img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+
+/* =========================================
+   HERO — ACCUEIL
+   ========================================= */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(57, 255, 20, 0.15),
+        transparent 45%),
+        linear-gradient(
+        180deg,
+        #050505 0%,
+        #071000 100%
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero-logo {
+    width: 190px;
+    height: 190px;
+    object-fit: contain;
+
+    margin-bottom: 20px;
+
+    filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.4));
+}
+
+.hero-country {
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 10px 0;
+
+    font-size: clamp(45px, 8vw, 90px);
+
+    color: var(--green);
+
+    line-height: 1;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 10px rgba(57, 255, 20, 0.4);
+}
+
+.hero-subtitle {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.hero-description {
+    max-width: 650px;
+    margin: 25px auto;
+
+    color: var(--gray);
+    font-size: 17px;
+}
+
+
+/* =========================================
+   BOUTONS
+   ========================================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 14px 25px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.primary-button {
+    background: var(--green);
+    color: #000000;
+}
+
+.primary-button:hover {
+    background: var(--yellow);
+    transform: translateY(-3px);
+}
+
+.secondary-button {
+    border: 2px solid var(--green);
+    color: var(--green);
+}
+
+.secondary-button:hover {
+    background: var(--green);
+    color: #000000;
+    transform: translateY(-3px);
+}
+
+
+/* =========================================
+   SECTIONS
+   ========================================= */
+
+.section {
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: #090909;
+}
+
+.dark-section {
+    background: #030303;
+}
+
+.section-label {
+    margin: 0 0 10px;
+
+    color: var(--yellow);
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+.section h2 {
+    margin-top: 0;
+
+    color: var(--green);
+
+    font-size: 38px;
+}
+
+.section-text {
+    max-width: 700px;
+
+    margin: 0 auto 40px;
+
+    color: var(--gray);
+
+    font-size: 17px;
+}
+
+
+/* =========================================
+   CARTES DU CLUB
+   ========================================= */
+
+.club-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 50px auto 0;
+}
+
+.info-card {
+    padding: 35px 20px;
+
+    background: #111111;
+
+    border: 1px solid #222222;
+
+    border-top: 3px solid var(--green);
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.info-card:hover {
+    transform: translateY(-8px);
+
+    border-color: var(--green);
+
+    box-shadow:
+        0 10px 30px rgba(57, 255, 20, 0.12);
+}
+
+.info-card span {
+    font-size: 35px;
+}
+
+.info-card h3 {
+    color: var(--yellow);
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    padding: 50px 20px;
+
+    text-align: center;
+
+    background: #000000;
+
+    border-top: 2px solid var(--green);
+}
+
+.footer-logo {
+    width: 80px;
+    height: 80px;
+
+    object-fit: contain;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 6px 0;
+
+    color: var(--gray);
+}
+
+.copyright {
+    margin-top: 25px;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   VERSION MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 80vh;
+    }
+
+    .hero-logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .club-info {
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
 }
