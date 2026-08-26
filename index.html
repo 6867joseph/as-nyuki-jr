@@ -7,36 +7,207 @@
 
     <title>AS Nyuki JR Officiel</title>
 
-    <!-- Connexion avec notre fichier CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>AS NYUKI JR</h1>
-        <p>Site officiel du club</p>
-    </header>
+    <!-- BARRE DE NAVIGATION -->
+    <nav class="navbar">
 
+        <a href="index.html" class="logo-link">
+            <img src="logo.png" alt="Logo AS Nyuki JR">
+            <span>AS NYUKI JR</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#accueil">Accueil</a>
+            <a href="#club">Le Club</a>
+            <a href="#effectif">Effectif</a>
+            <a href="#matchs">Matchs</a>
+            <a href="#actualites">Actualités</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- SECTION PRINCIPALE -->
     <main>
 
-        <h2>Bienvenue à l'AS Nyuki Junior</h2>
+        <section id="accueil" class="hero">
 
-        <p>
-            Club de football basé à Butembo,
-            en République démocratique du Congo.
-        </p>
+            <div class="hero-content">
 
-        <p>
-            Stade : Stade Limboro
-        </p>
+                <img
+                    src="logo.png"
+                    alt="Logo officiel de l'AS Nyuki JR"
+                    class="hero-logo"
+                >
+
+                <p class="hero-country">BUTEMBO • RDC 🇨🇩</p>
+
+                <h1>AS NYUKI JR</h1>
+
+                <p class="hero-subtitle">
+                    Site officiel du club
+                </p>
+
+                <p class="hero-description">
+                    Bienvenue sur le site officiel de
+                    l'AS Nyuki Junior, club de football
+                    basé à Butembo en République
+                    démocratique du Congo.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#effectif" class="button primary-button">
+                        Voir l'effectif
+                    </a>
+
+                    <a href="#club" class="button secondary-button">
+                        Découvrir le club
+                    </a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PRÉSENTATION DU CLUB -->
+        <section id="club" class="section">
+
+            <p class="section-label">NOTRE CLUB</p>
+
+            <h2>Bienvenue à l'AS Nyuki Junior</h2>
+
+            <p class="section-text">
+                L'AS Nyuki Junior est un club de football
+                basé à Butembo, en République démocratique
+                du Congo.
+            </p>
+
+            <div class="club-info">
+
+                <div class="info-card">
+                    <span>📍</span>
+                    <h3>Ville</h3>
+                    <p>Butembo, RDC</p>
+                </div>
+
+                <div class="info-card">
+                    <span>🏟️</span>
+                    <h3>Stade</h3>
+                    <p>Stade Limboro</p>
+                </div>
+
+                <div class="info-card">
+                    <span>👥</span>
+                    <h3>Effectif</h3>
+                    <p>36 joueurs</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EFFECTIF -->
+        <section id="effectif" class="section dark-section">
+
+            <p class="section-label">L'ÉQUIPE</p>
+
+            <h2>Notre effectif</h2>
+
+            <p class="section-text">
+                Découvrez les joueurs qui représentent
+                les couleurs de l'AS Nyuki JR.
+            </p>
+
+            <a href="#effectif" class="button primary-button">
+                Voir les 36 joueurs
+            </a>
+
+        </section>
+
+
+        <!-- MATCHS -->
+        <section id="matchs" class="section">
+
+            <p class="section-label">FOOTBALL</p>
+
+            <h2>Matchs & Résultats</h2>
+
+            <p class="section-text">
+                Retrouvez prochainement le calendrier,
+                les résultats et les informations
+                concernant nos rencontres.
+            </p>
+
+        </section>
+
+
+        <!-- ACTUALITÉS -->
+        <section id="actualites" class="section dark-section">
+
+            <p class="section-label">ACTUALITÉS</p>
+
+            <h2>Dernières nouvelles</h2>
+
+            <p class="section-text">
+                Les actualités de l'AS Nyuki JR seront
+                publiées ici.
+            </p>
+
+        </section>
+
+
+        <!-- GALERIE -->
+        <section id="galerie" class="section">
+
+            <p class="section-label">IMAGES</p>
+
+            <h2>Galerie</h2>
+
+            <p class="section-text">
+                Les photos et moments importants du club
+                seront présentés ici.
+            </p>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="section dark-section">
+
+            <p class="section-label">CONTACT</p>
+
+            <h2>AS Nyuki JR</h2>
+
+            <p class="section-text">
+                Butembo, République démocratique du Congo 🇨🇩
+            </p>
+
+        </section>
 
     </main>
 
+
+    <!-- PIED DE PAGE -->
     <footer>
-        <p>
-            AS Nyuki JR Officiel — Butembo, RDC 🇨🇩
+
+        <img src="logo.png" alt="AS Nyuki JR" class="footer-logo">
+
+        <p>AS Nyuki JR Officiel</p>
+
+        <p>Butembo • République démocratique du Congo 🇨🇩</p>
+
+        <p class="copyright">
+            © 2026 AS Nyuki JR. Tous droits réservés.
         </p>
+
     </footer>
 
 </body>
