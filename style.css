@@ -1,15 +1,17 @@
 /* =========================================
-   AS NYUKI JR — STYLE PRINCIPAL
+   AS NYUKI JR — DESIGN OFFICIEL
    ========================================= */
 
 :root {
-    --green: #39ff14;
-    --dark-green: #168000;
+    --green: #19a800;
+    --green-light: #39d353;
     --black: #050505;
-    --dark: #101010;
-    --yellow: #ffd600;
+    --dark: #0d0d0d;
+    --dark-card: #151515;
+    --yellow: #ffd000;
     --white: #ffffff;
     --gray: #bdbdbd;
+    --border: #292929;
 }
 
 
@@ -19,11 +21,12 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
     background: var(--black);
     color: var(--white);
     font-family: Arial, Helvetica, sans-serif;
@@ -37,7 +40,7 @@ a {
 
 
 /* =========================================
-   BARRE DE NAVIGATION
+   NAVIGATION
    ========================================= */
 
 .navbar {
@@ -45,13 +48,16 @@ a {
     top: 0;
     z-index: 1000;
 
+    min-height: 75px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 12px 5%;
+    padding: 10px 5%;
 
-    background: rgba(5, 5, 5, 0.96);
+    background: rgba(5, 5, 5, 0.97);
+
     border-bottom: 2px solid var(--green);
 }
 
@@ -61,36 +67,65 @@ a {
     gap: 12px;
 
     font-size: 20px;
-    font-weight: bold;
-    color: var(--green);
+    font-weight: 800;
+
+    color: var(--white);
 }
 
 .logo-link img {
-    width: 55px;
-    height: 55px;
+    width: 52px;
+    height: 52px;
+
     object-fit: contain;
+}
+
+.logo-link span {
+    letter-spacing: 1px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 25px;
+    gap: 24px;
 }
 
 .nav-links a {
-    font-size: 14px;
+    position: relative;
+
+    font-size: 13px;
     font-weight: bold;
+
     text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--yellow);
+
     transition: 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--green);
+    color: var(--green-light);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 
 /* =========================================
-   HERO — ACCUEIL
+   HERO
    ========================================= */
 
 .hero {
@@ -100,68 +135,81 @@ a {
     align-items: center;
     justify-content: center;
 
-    text-align: center;
-
     padding: 80px 20px;
 
+    text-align: center;
+
     background:
-        radial-gradient(circle at center,
-        rgba(57, 255, 20, 0.15),
-        transparent 45%),
+        radial-gradient(
+            circle at center,
+            rgba(25, 168, 0, 0.20),
+            transparent 45%
+        ),
         linear-gradient(
-        180deg,
-        #050505 0%,
-        #071000 100%
+            180deg,
+            #050505 0%,
+            #071007 100%
         );
 }
 
 .hero-content {
+    width: 100%;
     max-width: 850px;
 }
 
 .hero-logo {
     width: 190px;
     height: 190px;
+
     object-fit: contain;
 
     margin-bottom: 20px;
 
-    filter: drop-shadow(0 0 20px rgba(57, 255, 20, 0.4));
+    filter:
+        drop-shadow(
+            0 0 25px rgba(25, 168, 0, 0.45)
+        );
 }
 
 .hero-country {
+    margin-bottom: 12px;
+
     color: var(--yellow);
-    font-size: 14px;
+
+    font-size: 13px;
     font-weight: bold;
+
     letter-spacing: 3px;
 }
 
 .hero h1 {
-    margin: 10px 0;
+    color: var(--green-light);
 
     font-size: clamp(45px, 8vw, 90px);
 
-    color: var(--green);
-
     line-height: 1;
 
-    letter-spacing: 4px;
+    letter-spacing: 5px;
 
     text-shadow:
-        0 0 10px rgba(57, 255, 20, 0.4);
+        0 0 20px rgba(25, 168, 0, 0.35);
 }
 
 .hero-subtitle {
-    font-size: 24px;
+    margin-top: 15px;
+
+    font-size: 23px;
     font-weight: bold;
 }
 
 .hero-description {
     max-width: 650px;
+
     margin: 25px auto;
 
     color: var(--gray);
-    font-size: 17px;
+
+    font-size: 16px;
 }
 
 
@@ -171,7 +219,9 @@ a {
 
 .hero-buttons {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
 
     margin-top: 35px;
@@ -182,7 +232,7 @@ a {
 .button {
     display: inline-block;
 
-    padding: 14px 25px;
+    padding: 13px 24px;
 
     border-radius: 6px;
 
@@ -193,22 +243,29 @@ a {
 
 .primary-button {
     background: var(--green);
-    color: #000000;
+
+    color: var(--white);
 }
 
 .primary-button:hover {
     background: var(--yellow);
+
+    color: var(--black);
+
     transform: translateY(-3px);
 }
 
 .secondary-button {
     border: 2px solid var(--green);
-    color: var(--green);
+
+    color: var(--green-light);
 }
 
 .secondary-button:hover {
     background: var(--green);
-    color: #000000;
+
+    color: var(--white);
+
     transform: translateY(-3px);
 }
 
@@ -218,11 +275,11 @@ a {
    ========================================= */
 
 .section {
-    padding: 90px 8%;
+    padding: 90px 7%;
 
     text-align: center;
 
-    background: #090909;
+    background: #0a0a0a;
 }
 
 .dark-section {
@@ -230,20 +287,20 @@ a {
 }
 
 .section-label {
-    margin: 0 0 10px;
+    margin-bottom: 8px;
 
     color: var(--yellow);
 
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
 
     letter-spacing: 4px;
 }
 
 .section h2 {
-    margin-top: 0;
+    margin-bottom: 18px;
 
-    color: var(--green);
+    color: var(--green-light);
 
     font-size: 38px;
 }
@@ -255,7 +312,7 @@ a {
 
     color: var(--gray);
 
-    font-size: 17px;
+    font-size: 16px;
 }
 
 
@@ -264,6 +321,8 @@ a {
    ========================================= */
 
 .club-info {
+    max-width: 1000px;
+
     display: grid;
 
     grid-template-columns:
@@ -271,17 +330,15 @@ a {
 
     gap: 25px;
 
-    max-width: 1000px;
-
     margin: 50px auto 0;
 }
 
 .info-card {
     padding: 35px 20px;
 
-    background: #111111;
+    background: var(--dark-card);
 
-    border: 1px solid #222222;
+    border: 1px solid var(--border);
 
     border-top: 3px solid var(--green);
 
@@ -291,19 +348,194 @@ a {
 }
 
 .info-card:hover {
+    transform: translateY(-7px);
+
+    border-color: var(--green);
+}
+
+.info-card span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 35px;
+}
+
+.info-card h3 {
+    margin-bottom: 5px;
+
+    color: var(--yellow);
+}
+
+.info-card p {
+    color: var(--gray);
+}
+
+
+/* =========================================
+   GRILLE DES JOUEURS
+   ========================================= */
+
+.players-grid {
+    max-width: 1200px;
+
+    margin: 50px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 25px;
+
+    text-align: left;
+}
+
+
+/* =========================================
+   CARTE JOUEUR
+   ========================================= */
+
+.player-card {
+    overflow: hidden;
+
+    background: var(--dark-card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.player-card:hover {
     transform: translateY(-8px);
 
     border-color: var(--green);
 
     box-shadow:
-        0 10px 30px rgba(57, 255, 20, 0.12);
+        0 12px 35px rgba(25, 168, 0, 0.15);
 }
 
-.info-card span {
-    font-size: 35px;
+
+/* =========================================
+   PHOTO DU JOUEUR
+   ========================================= */
+
+.player-photo {
+    position: relative;
+
+    width: 100%;
+
+    height: 310px;
+
+    overflow: hidden;
+
+    background: #101010;
 }
 
-.info-card h3 {
+.player-photo::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 35%;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, 0.85)
+        );
+}
+
+.player-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.player-card:hover .player-photo img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   INFORMATIONS DU JOUEUR
+   ========================================= */
+
+.player-info {
+    position: relative;
+
+    padding: 20px;
+}
+
+.player-number {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    padding: 4px 9px;
+
+    background: var(--yellow);
+
+    color: var(--black);
+
+    border-radius: 4px;
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.player-info h3 {
+    margin-bottom: 6px;
+
+    color: var(--white);
+
+    font-size: 20px;
+}
+
+.player-position {
+    margin-bottom: 10px;
+
+    color: var(--green-light);
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.player-foot {
+    margin-bottom: 8px;
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+.player-description {
+    padding-top: 10px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--gray);
+
+    font-size: 13px;
+}
+
+.player-description::before {
+    content: "⚽ ";
+
     color: var(--yellow);
 }
 
@@ -332,7 +564,7 @@ footer {
 }
 
 footer p {
-    margin: 6px 0;
+    margin: 5px 0;
 
     color: var(--gray);
 }
@@ -340,33 +572,58 @@ footer p {
 .copyright {
     margin-top: 25px;
 
-    font-size: 13px;
+    font-size: 12px;
 }
 
 
 /* =========================================
-   VERSION MOBILE
+   TABLETTE
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+    .players-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
    ========================================= */
 
 @media (max-width: 800px) {
 
     .navbar {
         flex-direction: column;
+
         gap: 15px;
+
+        padding: 12px 4%;
     }
 
     .nav-links {
-        flex-wrap: wrap;
         justify-content: center;
+
+        flex-wrap: wrap;
+
         gap: 12px;
     }
 
     .nav-links a {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .hero {
         min-height: 80vh;
+
+        padding: 70px 20px;
     }
 
     .hero-logo {
@@ -374,19 +631,66 @@ footer p {
         height: 140px;
     }
 
+    .hero-country {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 19px;
+    }
+
     .hero-description {
-        font-size: 15px;
+        font-size: 14px;
+    }
+
+    .section {
+        padding: 70px 6%;
+    }
+
+    .section h2 {
+        font-size: 30px;
     }
 
     .club-info {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 65px 6%;
+    .players-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
     }
 
-    .section h2 {
-        font-size: 30px;
+    .player-photo {
+        height: 260px;
     }
+
+}
+
+
+/* =========================================
+   PETIT MOBILE
+   ========================================= */
+
+@media (max-width: 500px) {
+
+    .players-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .player-photo {
+        height: 360px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .button {
+        width: 100%;
+    }
+
 }
